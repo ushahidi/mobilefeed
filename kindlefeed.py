@@ -26,7 +26,7 @@ def urlencode(s):
 
 @app.route('/')
 def index():
-	feeds = (('TechCrunch', 'http://feeds.feedburner.com/techcrunch'),)
+	feeds = (('Mashable', 'http://feeds.mashable.com/Mashable'), ('TechCrunch', 'http://feeds.feedburner.com/techcrunch'))
 	return flask.render_template('index.html', feeds=feeds)
 
 @app.route('/feed')
