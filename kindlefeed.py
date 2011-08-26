@@ -20,9 +20,9 @@ import feedparser, flask, urllib
  
 app = flask.Flask(__name__)
 
-@app.template_filter('urlencode')
+@app.template_filter('quote_plus')
 def urlencode(s):
-   return urllib.urlencode(str(s))
+   return urllib.quote_plus(s)
 
 @app.route('/feed')
 def feed():

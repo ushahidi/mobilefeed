@@ -9,7 +9,7 @@
 		<p><a href="/">Back to Feed List</a></p>
 		<ul>
 			{% for entry in feed.entries %}
-				<li><a href="/entry?feed={{ feed.link|urlencode }}&amp;entry={{ entry.link|urlencode }}">{{ entry.title }}</a></li>
+				<li><a href="/entry?feed={{ feed.link|quote_plus }}&amp;entry={{ entry.link|quote_plus }}">{{ entry.title }}</a></li>
 			{% endfor %}
 		</ul>
 		<p><a href="/">Back to Feed List</a></p>
