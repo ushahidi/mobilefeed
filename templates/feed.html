@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ feed.feed.title }}</title>
+	</head>
+	<body>
+		<h1>{{ feed.feed.title }}</h1>
+		<ul>
+			{% for entry in feed.entries %}
+				<li>{{ entry.title }}</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>
