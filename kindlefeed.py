@@ -23,7 +23,7 @@ app = flask.Flask(__name__)
 @app.route('/feed')
 def feed():
 	feed = feedparser.parse('http://feeds.feedburner.com/TechCrunch/')
-	render_template('feed.html', feed=feed)
+	flask.render_template('feed.html', feed=feed)
 
 def main():
 	app.debug = True
