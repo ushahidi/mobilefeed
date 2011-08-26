@@ -2,14 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>{{ data.feed.title }}</title>
+		<title>{{ feed.feed.title }}</title>
 	</head>
 	<body>
-		<h1>{{ data.feed.title }}</h1>
+		<h1>{{ feed.feed.title }}</h1>
 		<p><a href="/">Back to Feed List</a></p>
 		<ul>
-			{% for entry in data.entries %}
-				<li><a href="/entry?feed={{ feed|quote_plus }}&amp;entry={{ entry.link|quote_plus }}">{{ entry.title }}</a></li>
+			{% for entry in feed.entries %}
+				<li><a href="/entry?feed={{ url|quote_plus }}&amp;entry={{ entry.id|quote_plus }}">{{ entry.title }}</a></li>
 			{% endfor %}
 		</ul>
 		<p><a href="/">Back to Feed List</a></p>

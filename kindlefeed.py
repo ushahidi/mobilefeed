@@ -26,14 +26,21 @@ def urlencode(s):
 
 @app.route('/feed')
 def feed():
-	feed = 'http://feeds.feedburner.com/TechCrunch/'
-	data = feedparser.parse(feed)
-	return flask.render_template('feed.html', feed=feed, data=data)
+	url = 'http://feeds.feedburner.com/TechCrunch/'
+	feed = feedparser.parse(feed)
+	return flask.render_template('feed.html', url=url, feed=feed)
 
 @app.route('/entry')
 def entry():
-	feed = feedparser.parse('http://feeds.feedburner.com/TechCrunch/')
-	return flask.render_template('feed.html', feed=feed)
+	feed_url = request.args.get('feed')
+	entry_id = request.args.get('entry')
+	feed = feedparser.parse(feed_url)
+
+	for i in feed.entries:
+		if i.id == entry_id:
+			entry = i
+
+	return flask.render_template('entry.html', feed_url=feed_url, feed=feed, entry=entry)
 
 def main():
 	app.debug = True
