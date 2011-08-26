@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>KindleFeed</title>
+	</head>
+	<body>
+		<h1>KindleFeed</h1>
+		<ul>
+			{% for feed in feeds %}
+				<li><a href="/feed?url={{ feed.0|quote_plus }}">{{ feed.1 }}</a></li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

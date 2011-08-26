@@ -22,11 +22,16 @@ app = flask.Flask(__name__)
 
 @app.template_filter('quote_plus')
 def urlencode(s):
-   return urllib.quote_plus(s)
+	return urllib.quote_plus(s)
+
+@app.route('/')
+def feed():
+	feeds = (('TechCrunch', 'http://feeds.feedburner.com/techcrunch'))
+	return flask.render_template('index.html', feeds=feeds)
 
 @app.route('/feed')
 def feed():
-	url = 'http://feeds.feedburner.com/TechCrunch/'
+	url = flas.request.args.get('url')
 	feed = feedparser.parse(url)
 	return flask.render_template('feed.html', url=url, feed=feed)
 
