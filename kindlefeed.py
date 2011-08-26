@@ -16,12 +16,21 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with KindleFeed.  If not, see <http://www.gnu.org/licenses/>.
 
-import feedparser, flask
+import feedparser, flask, urllib
  
 app = flask.Flask(__name__)
- 
+
+@app.template_filter('urlencode')
+def urlencode(s):
+   return urllib.urlencode(s)
+
 @app.route('/feed')
 def feed():
+	feed = feedparser.parse('http://feeds.feedburner.com/TechCrunch/')
+	return flask.render_template('feed.html', feed=feed)
+
+@app.route('/entry')
+def entry():
 	feed = feedparser.parse('http://feeds.feedburner.com/TechCrunch/')
 	return flask.render_template('feed.html', feed=feed)
 
