@@ -6,10 +6,10 @@
 	</head>
 	<body>
 		<h1>{{ entry.title }}</h1>
-		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.title }}</a></p>
+		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.feed.title }}</a></p>
 		{% for content in entry.content %}
 			{{ content.value|safe }}
 		{% endfor %}
-		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.title }}</a></p>
+		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.feed.title }}</a></p>
 	</body>
 </html>
