@@ -9,7 +9,7 @@
 		<p><a href="/">Back to Feed List</a></p>
 		<ul>
 			{% for entry in data.entries %}
-				<li><a href="/entry?feed={{ data.feed.link|quote_plus }}&amp;entry={{ entry.link|quote_plus }}">{{ entry.title }}</a></li>
+				<li><a href="/entry?feed={{ feed|quote_plus }}&amp;entry={{ entry.link|quote_plus }}">{{ entry.title }}</a></li>
 			{% endfor %}
 		</ul>
 		<p><a href="/">Back to Feed List</a></p>
