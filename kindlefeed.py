@@ -22,7 +22,7 @@ app = flask.Flask(__name__)
 
 @app.template_filter('urlencode')
 def urlencode(s):
-   return urllib.urlencode(s)
+   return urllib.urlencode(str(s))
 
 @app.route('/feed')
 def feed():
