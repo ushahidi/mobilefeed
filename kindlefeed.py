@@ -31,7 +31,7 @@ def feed():
 
 @app.route('/feed')
 def feed():
-	url = flas.request.args.get('url')
+	url = flask.request.args.get('url')
 	feed = feedparser.parse(url)
 	return flask.render_template('feed.html', url=url, feed=feed)
 
