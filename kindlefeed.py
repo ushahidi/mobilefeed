@@ -27,7 +27,7 @@ def urlencode(s):
 @app.route('/feed')
 def feed():
 	url = 'http://feeds.feedburner.com/TechCrunch/'
-	feed = feedparser.parse(feed)
+	feed = feedparser.parse(url)
 	return flask.render_template('feed.html', url=url, feed=feed)
 
 @app.route('/entry')
