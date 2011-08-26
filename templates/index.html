@@ -8,7 +8,7 @@
 		<h1>KindleFeed</h1>
 		<ul>
 			{% for feed in feeds %}
-				<li><a href="/feed?url={{ feed.0|quote_plus }}">{{ feed.1 }}</a></li>
+				<li><a href="/feed?url={{ feed.url|quote_plus }}">{{ feed.title }}</a></li>
 			{% endfor %}
 		</ul>
 	</body>
