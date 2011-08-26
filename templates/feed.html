@@ -6,10 +6,12 @@
 	</head>
 	<body>
 		<h1>{{ feed.feed.title }}</h1>
+		<p><a href="/">Back to Feed List</a></p>
 		<ul>
 			{% for entry in feed.entries %}
-				<li>{{ entry.title }}</li>
+				<li><a href="/entry?uri={{ entry.link|urlencode }}">{{ entry.title }}</a></li>
 			{% endfor %}
 		</ul>
+		<p><a href="/">Back to Feed List</a></p>
 	</body>
 </html>
