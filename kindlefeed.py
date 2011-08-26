@@ -32,8 +32,8 @@ def feed():
 
 @app.route('/entry')
 def entry():
-	feed_url = request.args.get('feed')
-	entry_id = request.args.get('entry')
+	feed_url = flask.request.args.get('feed')
+	entry_id = flask.request.args.get('entry')
 	feed = feedparser.parse(feed_url)
 
 	for i in feed.entries:
