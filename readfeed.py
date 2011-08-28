@@ -28,8 +28,7 @@ def urlencode(s):
 def index():
 	feeds = (('Mashable', 'http://feeds.mashable.com/Mashable'),
 	         ('TechCrunch', 'http://feeds.feedburner.com/techcrunch'),
-	         ('BBC', 'http://feeds.guardian.co.uk/theguardian/rss'),
-	         ('The Guardian', 'http://feeds.guardian.co.uk/theguardian/rss'),
+	         #('The Guardian', 'http://feeds.guardian.co.uk/theguardian/rss'),
 	         ('Dutch News', 'http://www.dutchnews.nl/news/atom.xml'))
 	return flask.render_template('index.html', feeds=feeds)
 
