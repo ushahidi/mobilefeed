@@ -40,10 +40,14 @@ def entry():
 	feed_url = flask.request.args.get('feed')
 	entry_id = flask.request.args.get('entry')
 	feed = feedparser.parse(feed_url)
+	entry = None
 
 	for i in feed.entries:
 		if i.id == entry_id:
 			entry = i
+	
+	if entry == None:
+		flask.abort(404)
 
 	return flask.render_template('entry.html', feed_url=feed_url, feed=feed, entry=entry)
 
