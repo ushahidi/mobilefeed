@@ -28,6 +28,7 @@ def urlencode(s):
 def index():
 	feeds = (('Danger Room', 'http://www.wired.com/dangerroom/feed/'),
 	         ('Dutch News', 'http://www.dutchnews.nl/news/atom.xml'),
+	         ('The Guardian', 'http://feeds.guardian.co.uk/theguardian/rss'),
 	         ('Mashable', 'http://feeds.mashable.com/Mashable'),
 	         ('ReadWriteWeb', 'http://feeds.feedburner.com/readwriteweb'),
 	         ('TechCrunch', 'http://feeds.feedburner.com/techcrunch'),
