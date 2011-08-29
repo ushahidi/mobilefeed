@@ -1,20 +1,20 @@
-# ReadFeed Controller
+# MobileFeed Controller
 # =====================
 #
-# This file is part of ReadFeed.
+# This file is part of MobileFeed.
 #
-# ReadFeed is free software: you can redistribute it and/or modify
+# MobileFeed is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# ReadFeed is distributed in the hope that it will be useful,
+# MobileFeed is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Affero General Public License for more details.
 #
 # You should have received a copy of the GNU Affero General Public License
-# along with ReadFeed.  If not, see <http://www.gnu.org/licenses/>.
+# along with MobileFeed.  If not, see <http://www.gnu.org/licenses/>.
 
 import feedparser, flask, urllib
  

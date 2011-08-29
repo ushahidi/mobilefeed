@@ -2,10 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>ReadFeed</title>
+		<title>MobileFeed</title>
 	</head>
 	<body>
-		<h1>ReadFeed</h1>
+		<h1>MobileFeed</h1>
 		<ul>
 			{% for feed in feeds %}
 				<li><a href="/feed?url={{ feed.1|quote_plus }}">{{ feed.0 }}</a></li>
