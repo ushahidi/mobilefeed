@@ -7,9 +7,9 @@
 	<body>
 		<h1>{{ entry.title }}</h1>
 		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.feed.title }}</a></p>
-		{% entry.description %}
+		{% entry.description|safe %}
 		{% for content in entry.content %}
-			{{ content.value|safe }}
+			{{ content|safe }}
 		{% endfor %}
 		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.feed.title }}</a></p>
 	</body>
