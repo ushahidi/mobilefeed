@@ -8,7 +8,7 @@
 		<p class="nav"><a href="/">MobileFeed</a> &gt; <a href="/feed?url={{ feed_url|quote_plus }}">{{ feed.feed.title }}</a> &gt; {{ entry.title }}</p>
 		{{ entry.description|safe }}
 		{% for content in entry.content %}
-			{{ content|safe }}
+			{{ content.value|safe }}
 		{% endfor %}
 		<p class="nav"><a href="/">MobileFeed</a> &gt; <a href="/feed?url={{ feed_url|quote_plus }}">{{ feed.feed.title }}</a> &gt; {{ entry.title }}</p>
 	</body>
