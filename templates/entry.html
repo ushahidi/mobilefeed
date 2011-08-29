@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>{{ entry.title }}</title>
+		<link rel="stylesheet" href="/static/style.css">
 	</head>
 	<body>
 		<p class="nav"><a href="/">MobileFeed</a> &gt; <a href="/feed?url={{ feed_url|quote_plus }}">{{ feed.feed.title }}</a> &gt; {{ entry.title }}</p>
