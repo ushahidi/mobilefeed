@@ -5,12 +5,11 @@
 		<title>{{ entry.title }}</title>
 	</head>
 	<body>
-		<h1>{{ entry.title }}</h1>
-		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.feed.title }}</a></p>
+		<p class="nav"><a href="/">MobileFeed</a> &gt; <a href="/feed?url={{ feed_url|quote_plus }}">{{ feed.feed.title }}</a> &gt; {{ entry.title }}</p>
 		{{ entry.description|safe }}
 		{% for content in entry.content %}
 			{{ content|safe }}
 		{% endfor %}
-		<p><a href="/feed?url={{ feed_url|quote_plus }}">Back to {{ feed.feed.title }}</a></p>
+		<p class="nav"><a href="/">MobileFeed</a> &gt; <a href="/feed?url={{ feed_url|quote_plus }}">{{ feed.feed.title }}</a> &gt; {{ entry.title }}</p>
 	</body>
 </html>

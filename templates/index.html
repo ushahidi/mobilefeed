@@ -5,7 +5,7 @@
 		<title>MobileFeed</title>
 	</head>
 	<body>
-		<h1>MobileFeed</h1>
+		<p class="nav">MobileFeed</p>
 		<ul>
 			{% for feed in feeds %}
 				<li><a href="/feed?url={{ feed.1|quote_plus }}">{{ feed.0 }}</a></li>
