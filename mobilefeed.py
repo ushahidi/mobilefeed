@@ -26,7 +26,8 @@ def urlencode(s):
 
 @app.route('/')
 def index():
-	feeds = (('Danger Room', 'http://www.wired.com/dangerroom/feed/'),
+	feeds = (('AfriGadget', 'http://feeds.feedburner.com/afrigadget'),
+	         ('Danger Room', 'http://www.wired.com/dangerroom/feed/'),
 	         ('Dutch News', 'http://www.dutchnews.nl/news/atom.xml'),
 	         ('The Guardian', 'http://feeds.guardian.co.uk/theguardian/rss'),
 	         ('Mashable', 'http://feeds.mashable.com/Mashable'),
@@ -36,6 +37,7 @@ def index():
 	         ('The Technium', 'http://feeds.feedburner.com/thetechnium'),
 	         ('Threat Level', 'http://www.wired.com/threatlevel/feed/'),
 	         ('Ushahidi Blog', 'http://feeds.feedburner.com/ushahidi'),
+	         ('White African', 'http://feeds.feedburner.com/white_african'),
 	         ('Wired Top Stories', 'http://feeds.wired.com/wired/index'))
 	return flask.render_template('index.html', feeds=feeds)
 
