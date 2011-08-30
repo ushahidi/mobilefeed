@@ -30,6 +30,7 @@ def index():
 	         ('Dutch News', 'http://www.dutchnews.nl/news/atom.xml'),
 	         ('The Guardian', 'http://feeds.guardian.co.uk/theguardian/rss'),
 	         ('Mashable', 'http://feeds.mashable.com/Mashable'),
+	         ('MIH Media Lab', 'http://ml.sun.ac.za/feed/'),
 	         ('ReadWriteWeb', 'http://feeds.feedburner.com/readwriteweb'),
 	         ('TechCrunch', 'http://feeds.feedburner.com/techcrunch'),
 	         ('The Technium', 'http://feeds.feedburner.com/thetechnium'),
