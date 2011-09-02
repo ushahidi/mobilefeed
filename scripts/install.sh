@@ -25,10 +25,10 @@ apt-get update
 apt-get upgrade -y
 
 # Install the necessary Debian packages.
-apt-get install -y apache2 libapache2-mod-wsgi python-pip git
+apt-get install -y apache2 libapache2-mod-wsgi python-pip git memcached
 
 # Install the necessary Python packages.
-pip install flask feedparser
+pip install flask feedparser python-memcached
 
 # Create a user for MobileFeed processes to run as.
 adduser --disabled-password --gecos "" mobilefeed

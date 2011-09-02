@@ -16,9 +16,19 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with MobileFeed.  If not, see <http://www.gnu.org/licenses/>.
 
-import feedparser, flask, urllib
- 
+import feedparser, flask, memcache, urllib
+
 application = flask.Flask(__name__)
+cache = memcache.Client(['127.0.0.1:11211'])
+
+def getfeed(url):
+	feed = cache.get(url)
+
+	if not feed:
+		feed = urlopen(url).read()
+		cache.set(url, feed, 600)
+
+	return feedparser.parse(feed)
 
 @application.template_filter('quote_plus')
 def urlencode(s):
@@ -41,19 +51,21 @@ def index():
 	         ('Ushahidi Blog', 'http://feeds.feedburner.com/ushahidi'),
 	         ('White African', 'http://feeds.feedburner.com/white_african'),
 	         ('Wired Top Stories', 'http://feeds.wired.com/wired/index'))
+
 	return flask.render_template('index.html', feeds=feeds)
 
 @application.route('/feed')
 def feed():
 	url = flask.request.args.get('url')
-	feed = feedparser.parse(url)
+	feed = getfeed(url)
+	
 	return flask.render_template('feed.html', url=url, feed=feed)
 
 @application.route('/entry')
 def entry():
 	feed_url = flask.request.args.get('feed')
 	entry_id = flask.request.args.get('entry')
-	feed = feedparser.parse(feed_url)
+	feed = getfeed(feed_url)
 	entry = None
 
 	for i in feed.entries:
@@ -67,7 +79,7 @@ def entry():
 
 def main():
 	application.debug = True
-	application.run(host='0.0.0.0', port=80)
+	application.run(host='0.0.0.0')
 
 if __name__ == '__main__':
 	main()
