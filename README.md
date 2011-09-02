@@ -21,6 +21,15 @@ Web-Based Feed Reader for Mobile Devices
 
 `wget -qO- --no-check-certificate https://raw.github.com/charlvanniekerk/mobilefeed/master/scripts/install.sh | sudo bash`
 
-## Licenses
+## License
 
 * [GNU Affero General Public License](http://www.gnu.org/licenses/agpl.html)
+
+## Support
+
+* [SwiftRiver Mailing List](http://groups.google.com/group/swiftriver)
+
+## See Also
+
+* [MobileFeed](http://mobilefeed.tk)
+* [Ushahidi](http://www.ushahidi.com/)
