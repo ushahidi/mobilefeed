@@ -22,6 +22,7 @@ application = flask.Flask(__name__)
 cache = memcache.Client(['127.0.0.1:11211'])
 
 def getfeed(url):
+	url = str(url)
 	feed = cache.get(url)
 
 	if not feed:
