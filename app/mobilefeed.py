@@ -18,13 +18,13 @@
 
 import feedparser, flask, urllib
  
-app = flask.Flask(__name__)
+application = flask.Flask(__name__)
 
-@app.template_filter('quote_plus')
+@application.template_filter('quote_plus')
 def urlencode(s):
 	return urllib.quote_plus(s)
 
-@app.route('/')
+@application.route('/')
 def index():
 	feeds = (('AfriGadget', 'http://feeds.feedburner.com/afrigadget'),
 	         ('Danger Room', 'http://www.wired.com/dangerroom/feed/'),
@@ -43,13 +43,13 @@ def index():
 	         ('Wired Top Stories', 'http://feeds.wired.com/wired/index'))
 	return flask.render_template('index.html', feeds=feeds)
 
-@app.route('/feed')
+@application.route('/feed')
 def feed():
 	url = flask.request.args.get('url')
 	feed = feedparser.parse(url)
 	return flask.render_template('feed.html', url=url, feed=feed)
 
-@app.route('/entry')
+@application.route('/entry')
 def entry():
 	feed_url = flask.request.args.get('feed')
 	entry_id = flask.request.args.get('entry')
@@ -66,8 +66,8 @@ def entry():
 	return flask.render_template('entry.html', feed_url=feed_url, feed=feed, entry=entry)
 
 def main():
-	app.debug = True
-	app.run(host='0.0.0.0', port=80)
+	application.debug = True
+	application.run(host='0.0.0.0', port=80)
 
 if __name__ == '__main__':
 	main()

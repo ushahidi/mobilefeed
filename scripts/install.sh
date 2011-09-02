@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# MobileFeed Debian Deployment Script
-# ===================================
+# MobileFeed Deployment Script
+# ============================
 #
 # This file is part of MobileFeed.
 #
@@ -36,8 +36,11 @@ adduser --disabled-password --gecos "" mobilefeed
 # Create a local clone of the application.
 git clone https://github.com/charlvanniekerk/mobilefeed.git /var/www/mobilefeed
 
+# Remove default Apache configuration.
+rm -f /etc/apache2/sites-enabled/000-default
+
 # Replace the default Apache configuration with the bundled one.
-cp /var/www/mobilefeed/deploy/debian/apache.conf /etc/apache2/sites-enabled/000-default
+cp /var/www/mobilefeed/config/apache.conf /etc/apache2/sites-enabled/mobilefeed.conf
 
 # Tell Apache to reload its configuration.
 /etc/init.d/apache2 reload
