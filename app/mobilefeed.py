@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with MobileFeed.  If not, see <http://www.gnu.org/licenses/>.
 
-import feedparser, flask, memcache, urllib2
+import feedparser, flask, memcache, urllib, urllib2
 
 application = flask.Flask(__name__)
 cache = memcache.Client(['127.0.0.1:11211'])
