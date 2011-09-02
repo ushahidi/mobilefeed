@@ -19,7 +19,7 @@ Web-Based Feed Reader for Mobile Devices
 
 ## Installation
 
-`wget -qO- --no-check-certificate https://raw.github.com/charlvanniekerk/mobilefeed/master/scripts/install.sh | sudo bash`
+`wget -qO- --no-check-certificate https://raw.github.com/ushahidi/mobilefeed/master/scripts/install.sh | sudo bash`
 
 ## License
 

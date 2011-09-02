@@ -34,7 +34,7 @@ pip install flask feedparser python-memcached
 adduser --disabled-password --gecos "" mobilefeed
 
 # Create a local clone of the application.
-git clone https://github.com/charlvanniekerk/mobilefeed.git /var/www/mobilefeed
+git clone https://github.com/ushahidi/mobilefeed.git /var/www/mobilefeed
 
 # Remove default Apache configuration.
 rm -f /etc/apache2/sites-enabled/000-default
