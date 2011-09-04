@@ -50,6 +50,7 @@ def index():
 	         ('The Technium', 'http://feeds.feedburner.com/thetechnium'),
 	         ('Threat Level', 'http://www.wired.com/threatlevel/feed/'),
 	         ('Ushahidi Blog', 'http://feeds.feedburner.com/ushahidi'),
+	         ('VentureBeat', 'http://feeds.feedburner.com/venturebeat'),
 	         ('White African', 'http://feeds.feedburner.com/white_african'),
 	         ('Wired Top Stories', 'http://feeds.wired.com/wired/index'))
 
