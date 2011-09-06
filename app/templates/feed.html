@@ -9,7 +9,7 @@
 		<p class="nav"><a href="/">MobileFeed</a> &gt; {{ feed.feed.title }}</p>
 		<ul>
 			{% for entry in feed.entries %}
-				<li><a href="/entry?feed={{ url|quote_plus }}&amp;entry={{ entry.id|quote_plus }}">{{ entry.title }}</a> {{ entry.published_parsed|datetime }}</li>
+				<li><a href="/entry?feed={{ url|quote_plus }}&amp;entry={{ entry.id|quote_plus }}">{{ entry.title }}</a> {{ entry.date }}</li>
 			{% endfor %}
 		</ul>
 		<p class="nav"><a href="/">MobileFeed</a> &gt; {{ feed.feed.title }}</p>

@@ -35,10 +35,6 @@ def getfeed(url):
 def urlencode(s):
 	return urllib.quote_plus(s)
 
-@application.template_filter('datetime')
-def urlencode(s):
-	return s.strftime('%A, %d %B %Y')
-
 @application.route('/')
 def index():
 	feeds = (('AfriGadget', 'http://feeds.feedburner.com/afrigadget'),
