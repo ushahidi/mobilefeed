@@ -31,5 +31,4 @@ Web-Based Feed Reader for Mobile Devices
 
 ## See Also
 
-* [MobileFeed](http://mobilefeed.tk)
 * [Ushahidi](http://www.ushahidi.com/)
